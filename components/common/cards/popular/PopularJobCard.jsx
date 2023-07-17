@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { Text,View } from 'react-native'
 const PopularJobCard = () => {
   return (
-    <div>PopularJobCard</div>
+    <Text>popular jobs</Text>
   )
 }
 
