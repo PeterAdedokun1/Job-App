@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { Text, View } from 'react-native'
 const Nearbyjobs = () => {
   return (
-    <div>Nearbyjobs</div>
+    <View>
+      <Text>lsslsl</Text>
+    </View>
   )
 }
 

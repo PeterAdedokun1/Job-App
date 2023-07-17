@@ -1,8 +1,8 @@
 import React from 'react'
-
+import {Text,View} from "react-native"
 const Welcome = () => {
   return (
-    <div>Welcome</div>
+    <Text>Welcome</Text>
   )
 }
 
