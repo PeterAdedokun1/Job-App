@@ -9,7 +9,6 @@ import { icons, SIZES } from "../../../constants"
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 const Welcome = () => {
   const router = useRouter()
-  // const [search,sear]
   const [activeJobType, setActiveJobType] = useState("Full-time")
   return (
     <View>

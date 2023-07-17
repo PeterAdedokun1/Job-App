@@ -16,10 +16,8 @@ const Popularjobs = () => {
   const { data, isLoading, error, reFetch } = useFetch("search", {
     query: "React Developer",
     num_pages: 1,
-
   });
   const router = useRouter();
-  // console.log(data)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
