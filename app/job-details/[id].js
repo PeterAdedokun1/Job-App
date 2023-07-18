@@ -26,13 +26,30 @@ const JobDetails = () => {
   const params = useSearchParams();
     const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
-  const [activeTab, setActiveTabs] = useState(tabs[0]);  
+  const [activeTab, setActiveTab] = useState(tabs[0]);  
 
   const { data, isLoading,error, refetch } = useFetch("job-details", {
     job_id: params.id,
   });
     
-    const onRefresh =() =>{}
+  const onRefresh = () => { }
+  const displayTabContent = () => {
+    switch (activeTab) {
+      case "Qualifications":
+        return <Specifics
+          title="Qualifications"
+          points={data[0].job_highlights?.qualifications ?? ['N/A']} 
+
+        />
+        break;
+      case "Responsibilities":
+        break;
+      case 'About': 
+        break
+      default:
+        break;
+    }
+  }
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -78,8 +95,11 @@ const JobDetails = () => {
                   <JobTabs
                     tabs={tabs}
                     activeTab={activeTab}
-                    setActiveTabs={setActiveTabs}
+                    setActiveTab={setActiveTab}
                   />
+                  {
+                    displayTabContent()
+                  }
           </View>
         )}
       </ScrollView>

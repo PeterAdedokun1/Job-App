@@ -1,8 +1,10 @@
 import React from 'react'
-
+import {View, Text} from "react-native"
 const Specifics = () => {
   return (
-    <div>Specifics</div>
+    <View>
+      <Text>;lkjhjl</Text>
+   </View>
   )
 }
 
