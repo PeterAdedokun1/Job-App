@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  ActivityIndicator,
-} from "react-native";
+import { Text, View, TouchableOpacity, ActivityIndicator } from "react-native";
 import styles from "./nearbyjobs.style";
 import { useRouter } from "expo-router";
 import { COLORS, SIZES } from "../../../constants";
@@ -32,10 +27,12 @@ const Nearbyjobs = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-              data?.map((job) => (
-                <NearByJobCard job={job} key={job?.job_id}
-                  handleNavigate = {() => router.push(`/job-details/${job.job_id}`)}
-                />
+          data?.map((job) => (
+            <NearByJobCard
+              job={job}
+              key={job?.job_id}
+              handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+            />
           ))
         )}
       </View>

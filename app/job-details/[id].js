@@ -48,19 +48,34 @@ const JobDetails = () => {
             />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn
-              iconUrl={icons.share}
-              dimension={"60%"}
-            />
+            <ScreenHeaderBtn iconUrl={icons.share} dimension={"60%"} />
           ),
           headerTitle: "",
         }}
-          />
-          <ScrollView refreshControl={<RefreshControl refreshing={ refreshing} onRefresh={onRefresh} />}>
-              {isLoading ? <ActivityIndicator size="large" color={COLORS.primary} /> : error ? <Text>Something went wrong</Text> : data.length == 0 ? <Text>No Data</Text> : <View style={{padding: SIZES.medium, paddingBottom: 100}}>
-                  <Company data={data}/>
-              </View> }
-          </ScrollView>
+      />
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        ) : error ? (
+          <Text>Something went wrong</Text>
+        ) : data.length == 0 ? (
+          <Text>No Data</Text>
+        ) : (
+          <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+            <Company
+              companyLogo={data[0].employer_logo}
+              jobTitle={data[0].job_title}
+              companyName={data[0].employer_name}
+             location={data[0].job_country}
+            />
+            <JobTabs />
+          </View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };

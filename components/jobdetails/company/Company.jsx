@@ -1,8 +1,13 @@
 import React from 'react'
-
-const Company = () => {
+import { Tex,View } from "react-native"
+import styles from "./company.style"
+import {icons} from "../../../constants"
+import { View } from 'react-native-web'
+const Company = ({companyLogo, jobTitle, companyName, location}) => {
   return (
-    <div>Company</div>
+    <View style={styles.container}>
+      
+   </View>
   )
 }
 
